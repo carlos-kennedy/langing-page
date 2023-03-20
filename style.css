@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  --main-c: #ffc700;
+  --text-c: #ffffff;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(../background-image.png) no-repeat center / cover;
+  color: var(--text-c);
+}
+
+div#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  height: 55rem;
+  gap: 7.2rem;
+}
+
+header {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Emilys Candy", cursive;
+  font-weight: 400;
+  font-size: 6.4rem;
+  line-height: 8rem;
+  text-align: center;
+  width: 71.4rem;
+  height: 16rem;
+  color: var(--main-c);
+}
+
+header p {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+
+header p span {
+  color: var(--main-c);
+}
+
+header p:nth-child(3) {
+  opacity: 0.6;
+}
+
+div.btns {
+  display: flex;
+  justify-content: center;
+  gap: 4.8rem;
+  align-items: center;
+}
+
+a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  text-align: center;
+
+  opacity: 0.6;
+  color: var(--text-c);
+  position: relative;
+  text-transform: uppercase;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0%;
+  height: 0.2rem;
+  background: var(--text-c);
+  transition: width 0.4s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 3.2rem;
+  background: var(--main-c);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+button svg {
+  opacity: 0;
+  display: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+button:hover svg {
+  opacity: 1;
+  display: initial;
+}
+
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(0.1rem) translateZ(0);
+  transform: perspective(0.1rem) translateZ(0);
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0);
+  position: relative;
+}
+.hvr-ripple-out:before {
+  content: "";
+  position: absolute;
+  border: var(--main-c) solid 0.6rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 0.7s;
+}
+.hvr-ripple-out:hover:before,
+.hvr-ripple-out:focus:before,
+.hvr-ripple-out:active:before {
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}
