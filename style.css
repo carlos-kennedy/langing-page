@@ -55,6 +55,7 @@ header p span {
 
 header p:nth-child(3) {
   opacity: 0.6;
+  font-weight: 400;
 }
 
 div.btns {
